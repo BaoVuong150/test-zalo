@@ -16,8 +16,8 @@
       cursor: pointer;
     }
     #shareImage{
-      width = 200px;
-      height = 200px;
+      width : 200px;
+      height : 200px;
     }
   </style>
 </head>
@@ -28,7 +28,7 @@
   <button id="btnShare">Chia sẻ ngay</button>
 
   <script>
-    const urlToShare = document.getElementById(shareImage);// Thay link web bạn
+    const urlToShare = document.getElementById(shareImage).src;// Thay link web bạn
 
     document.getElementById("btnShare").addEventListener("click", async () => {
       if (navigator.share) {
