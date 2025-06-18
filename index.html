@@ -1,56 +1,39 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Chia sẻ qua tin nhắn</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 40px; }
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: #ff5722;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    #shareImage{
-      width : 200px;
-      height : 200px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GETLOVE</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="bootstrap5/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-
-  <h2>✨ Chia sẻ nội dung này qua Zalo, Messenger, v.v.</h2>
-  <img id="shareImage" src="https://i.imgur.com/6RLwN0p.jpeg" alt="Ảnh demo" />
-  <button id="btnShare">Chia sẻ ngay</button>
-
-  
+    <div class="container-fluid vh-100">
+        <div class="row">
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 mx-auto position-relative">
+                <section class="section">
+                    <div class="btn-row">
+                        <button class="button yes">Tui đồng ý</button>
+                        <button class="button no">NOPE!!</button>
+                    </div>
+                    <div class="btn-center">
+                        <button class="button time other">Cần thêm thời gian</button>
+                    </div>
+                </section>
+                <div class="modal-tks">
+                    <img class="img-message" src="img/message.png" alt="">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
- <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const urlToShare = document.getElementById("shareImage").src;
 
-    document.getElementById("btnShare").addEventListener("click", async () => {
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: "Ảnh vui nè!",
-            text: "Bạn xem thử ảnh này đi nhé 👇",
-            url: urlToShare
-          });
-          console.log("✅ Đã chia sẻ thành công!");
-        } catch (err) {
-          console.error("❌ Lỗi khi chia sẻ:", err);
-        }
-      } else {
-        alert("❌ Trình duyệt của bạn không hỗ trợ chức năng chia sẻ!");
-      }
-    });
-  });
-</script>
+<script src="JS/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 
 </html>
