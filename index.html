@@ -2,60 +2,42 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Chia sẻ bằng navigator.share()</title>
+  <title>Test Share Zalo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
-      padding: 40px;
+      padding: 50px;
     }
     img {
       max-width: 100%;
       height: auto;
-      margin-top: 20px;
-      border-radius: 10px;
     }
     button {
-      margin-top: 30px;
-      padding: 12px 24px;
+      margin-top: 20px;
+      padding: 12px 20px;
       font-size: 16px;
-      background-color: #2c6ff6;
-      color: white;
-      border: none;
-      border-radius: 6px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <h1>Chia sẻ ảnh qua Zalo hoặc ứng dụng khác</h1>
-  <p>Ảnh bên dưới sẽ được chia sẻ thông qua menu mặc định của điện thoại:</p>
-
-  <img id="shareImage" src="https://i.imgur.com/6RLwN0p.jpeg" alt="Ảnh demo" />
+  <h1>Chia sẻ ảnh qua Zalo</h1>
+  <img id="shareImage" src="https://i.imgur.com/6RLwN0p.jpeg" alt="Ảnh demo">
 
   <br>
-  <button id="btnShare">Chia sẻ ngay</button>
+  <button id="shareZalo">Chia sẻ Zalo</button>
 
   <script>
-    const imageUrl = document.getElementById("shareImage").src;
+    const btnZalo = document.getElementById('shareZalo');
+    const imageUrl = document.getElementById('shareImage').src;
 
-    document.getElementById("btnShare").addEventListener("click", async () => {
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: "Ảnh vui nè!",
-            text: "Xem thử ảnh này nhé!",
-            url: imageUrl
-          });
-          console.log("✅ Đã chia sẻ thành công!");
-        } catch (err) {
-          console.error("❌ Lỗi khi chia sẻ:", err);
-        }
-      } else {
-        alert("❌ Trình duyệt không hỗ trợ chức năng chia sẻ!");
-      }
+    btnZalo.addEventListener('click', () => {
+      const encodedUrl = encodeURIComponent(imageUrl);
+      const zaloShareUrl = `https://zalo.me/share?url=${encodedUrl}`;
+      window.open(zaloShareUrl, '_blank');
     });
   </script>
 
