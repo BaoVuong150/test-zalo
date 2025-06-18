@@ -15,15 +15,20 @@
       border-radius: 8px;
       cursor: pointer;
     }
+    #shareImage{
+      width = 200px;
+      height = 200px;
+    }
   </style>
 </head>
 <body>
 
   <h2>✨ Chia sẻ nội dung này qua Zalo, Messenger, v.v.</h2>
+  <img id="shareImage" src="https://i.imgur.com/6RLwN0p.jpeg" alt="Ảnh demo" />
   <button id="btnShare">Chia sẻ ngay</button>
 
   <script>
-    const urlToShare = "https://tenban.github.io/my-webpage/"; // Thay link web bạn
+    const urlToShare = document.getElementById(shareImage);// Thay link web bạn
 
     document.getElementById("btnShare").addEventListener("click", async () => {
       if (navigator.share) {
