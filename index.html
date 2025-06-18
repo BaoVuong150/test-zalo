@@ -1,66 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/bootstrap5/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/index.css">
+  <meta charset="UTF-8">
+  <title>Test Share Zalo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container-fluid" style="position: relative;">
-        <div class="header">
-            <img src="assets/image/logo-back.svg" alt="">
-            <img src="assets/image/logo-back-2.svg" alt="">
-        </div>
-        <div class="capture">
-            <img class="img-captured" src="assets/image/captured-image.png" alt="">
-        </div>
-        <div class="button">
-            <img class="button-share" id="copyLink" src="assets/image/share-button.svg" alt="">
-            <img class="button-download" src="assets/image/download-button.svg" alt="">
-        </div>
 
-        <div class="footer">
-            <img class="logo-superman" src="assets/image/logosuperman.png" alt="">
-            <img class="logo-mirinda" src="assets/image/logomirinda.png" alt="">
-        </div>
+  <h1>Chia sẻ ảnh qua Zalo</h1>
+  <img id="shareImage" src="https://i.imgur.com/6RLwN0p.jpeg" alt="Ảnh demo">
 
+  <br>
+  <button id="shareZalo">Chia sẻ Zalo</button>
 
-        <div class="modal-overlay" id="modalOverlay"></div>
-        <div class="modal-share" id="modalShare">
-            <div class="modal-share-inner">
-                <a href="#" id="shareFacebook">
-                    <img src="assets/image/logo-facebook.svg" alt="Facebook">
-                </a>
-                <a href="#" id="shareZalo">
-                    <img src="assets/image/logo-zalo.svg" alt="Zalo">
-                </a>
-                <a href="#" id="copyLink">
-                    <img class="button-share" src="assets/image/logo-share.svg" alt="Copy Link">
-                </a>
-            </div>
-        </div>
+  <script>
+    const btnZalo = document.getElementById('shareZalo');
+    const imageUrl = document.getElementById('shareImage').src;
 
-        <!-- <div class="modal-overlay" id="qrModalOverlay"></div>
-        <div class="modal-qr" id="qrModal">`
-            <div class="title">
-                <p>Hãy quét mã để tải ảnh về</p>
-            </div>
-            <div class="modal-qr-inner">
-                <div id="qrcode">
-                    <img src="assets/image/logo-facebook.svg" alt="">
-                </div>
-            </div>
-            <div>
-                <button id="closeQrBtn">Đóng</button>
-            </div>
-        </div> -->
-    </div>
+    btnZalo.addEventListener('click', () => {
+      const encodedUrl = encodeURIComponent(imageUrl);
+      const zaloShareUrl = `https://zalo.me/share?url=${encodedUrl}`;
+      window.open(zaloShareUrl, '_blank');
+    });
+  </script>
+
 </body>
-<script src="assets/js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
 </html>
