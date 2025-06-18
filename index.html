@@ -2,42 +2,44 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Test Share Zalo</title>
+  <title>Chia sẻ qua tin nhắn</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+    body { font-family: sans-serif; text-align: center; padding: 40px; }
     button {
-      margin-top: 20px;
-      padding: 12px 20px;
+      padding: 12px 24px;
       font-size: 16px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <h1>Chia sẻ ảnh qua Zalo</h1>
-  <img id="shareImage" src="https://i.imgur.com/6RLwN0p.jpeg" alt="Ảnh demo">
-
-  <br>
-  <button id="shareZalo">Chia sẻ Zalo</button>
+  <h2>✨ Chia sẻ nội dung này qua Zalo, Messenger, v.v.</h2>
+  <button id="btnShare">Chia sẻ ngay</button>
 
   <script>
-    const btnZalo = document.getElementById('shareZalo');
-    const imageUrl = document.getElementById('shareImage').src;
+    const urlToShare = "https://tenban.github.io/my-webpage/"; // Thay link web bạn
 
-    btnZalo.addEventListener('click', () => {
-      const encodedUrl = encodeURIComponent(imageUrl);
-      const zaloShareUrl = `https://zalo.me/share?url=${encodedUrl}`;
-      window.open(zaloShareUrl, '_blank');
+    document.getElementById("btnShare").addEventListener("click", async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: "Nội dung thú vị nè!",
+            text: "Bạn xem thử cái này đi nhé 👇",
+            url: urlToShare
+          });
+          console.log("✅ Đã chia sẻ thành công!");
+        } catch (err) {
+          console.error("❌ Lỗi khi chia sẻ:", err);
+        }
+      } else {
+        alert("❌ Trình duyệt của bạn không hỗ trợ chia sẻ!");
+      }
     });
   </script>
 
