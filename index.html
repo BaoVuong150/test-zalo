@@ -29,15 +29,16 @@
 
   
 </body>
-  <script>
-    const urlToShare = document.getElementById(shareImage).src;// Thay link web bạn
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const urlToShare = document.getElementById("shareImage").src;
 
     document.getElementById("btnShare").addEventListener("click", async () => {
       if (navigator.share) {
         try {
           await navigator.share({
-            title: "Nội dung thú vị nè!",
-            text: "Bạn xem thử cái này đi nhé 👇",
+            title: "Ảnh vui nè!",
+            text: "Bạn xem thử ảnh này đi nhé 👇",
             url: urlToShare
           });
           console.log("✅ Đã chia sẻ thành công!");
@@ -45,9 +46,11 @@
           console.error("❌ Lỗi khi chia sẻ:", err);
         }
       } else {
-        alert("❌ Trình duyệt của bạn không hỗ trợ chia sẻ!");
+        alert("❌ Trình duyệt của bạn không hỗ trợ chức năng chia sẻ!");
       }
     });
-  </script>
+  });
+</script>
+
 
 </html>
