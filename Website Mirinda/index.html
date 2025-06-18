@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/bootstrap5/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+    <div class="container-fluid" style="position: relative;">
+        <div class="header">
+            <img src="assets/image/logo-back.svg" alt="">
+            <img src="assets/image/logo-back-2.svg" alt="">
+        </div>
+        <div class="capture">
+            <img class="img-captured" src="assets/image/captured-image.png" alt="">
+        </div>
+        <div class="button">
+            <img class="button-share" id="copyLink" src="assets/image/share-button.svg" alt="">
+            <img class="button-download" src="assets/image/download-button.svg" alt="">
+        </div>
+
+        <div class="footer">
+            <img class="logo-superman" src="assets/image/logosuperman.png" alt="">
+            <img class="logo-mirinda" src="assets/image/logomirinda.png" alt="">
+        </div>
+
+
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-share" id="modalShare">
+            <div class="modal-share-inner">
+                <a href="#" id="shareFacebook">
+                    <img src="assets/image/logo-facebook.svg" alt="Facebook">
+                </a>
+                <a href="#" id="shareZalo">
+                    <img src="assets/image/logo-zalo.svg" alt="Zalo">
+                </a>
+                <a href="#" id="copyLink">
+                    <img class="button-share" src="assets/image/logo-share.svg" alt="Copy Link">
+                </a>
+            </div>
+        </div>
+
+        <!-- <div class="modal-overlay" id="qrModalOverlay"></div>
+        <div class="modal-qr" id="qrModal">`
+            <div class="title">
+                <p>Hãy quét mã để tải ảnh về</p>
+            </div>
+            <div class="modal-qr-inner">
+                <div id="qrcode">
+                    <img src="assets/image/logo-facebook.svg" alt="">
+                </div>
+            </div>
+            <div>
+                <button id="closeQrBtn">Đóng</button>
+            </div>
+        </div> -->
+    </div>
+</body>
+<script src="assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</html>
