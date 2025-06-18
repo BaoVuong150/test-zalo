@@ -1,0 +1,186 @@
+@media screen and (min-width: 2100px) and (min-height: 3700px) {
+
+    /* BASE */
+    body {
+        background: url(../image/bg.png);
+    }
+
+    .container-fluid {
+        padding: 115px 180px 0 180px;
+    }
+
+    /*END BASE */
+
+
+    /* HEADER */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12rem;
+
+    }
+
+    /*END HEADER */
+
+    .capture {
+        margin-bottom: 5rem;
+    }
+
+    /* HANDLE BUTTON */
+    .button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 23rem;
+    }
+
+    .button-download {
+        padding-left: 227px;
+        cursor: pointer;
+    }
+
+    .button-share {
+        cursor: pointer;
+    }
+
+    /*END HANDLE BUTTON */
+
+
+
+    /* HANDLE FOOTER */
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .logo-mirinda {
+        object-fit: contain;
+    }
+
+    /* END HANDLE FOOTER */
+    .button-download:hover,
+    .button-share:hover {
+        opacity: 0.5;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        z-index: 9998;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Khi overlay hiện */
+    .modal-overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .modal-share {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: 0 auto;
+        padding: 120px 0;
+        background: #F4F4F4;
+        border-radius: 120px 120px 0 0;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        transform: translateY(100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .modal-share.show {
+        transform: translateY(0%);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .modal-share-inner {
+        display: flex;
+        justify-content: center;
+        gap: 115px;
+    }
+
+    .modal-share-inner a img {
+        width: 395px;
+        height: 395px;
+        cursor: pointer;
+        transition: transform 0.2s;
+        object-fit: contain;
+    }
+
+    .modal-share-inner a img:hover {
+        transform: scale(1.1);
+    }
+
+    /*END MODAL */
+
+    .modal-overlay,
+    #qrModalOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+        display: none;
+    }
+
+    .modal-qr {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 2rem;
+        z-index: 100;
+        display: block;
+        text-align: center;
+        width: 100rem;
+        height: 125rem;
+    }
+
+    .modal-qr-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10% auto;
+    }
+
+    #qrcode canvas {
+        margin-bottom: 15px;
+    }
+
+    #closeQrBtn {
+        background-color: #00BA46;
+        color: white;
+        width: 45rem;
+        height: 15rem;
+        border: none;
+        cursor: pointer;
+        font-size: 5rem;
+        font-weight: 600;
+    }
+
+    .title{
+        font-size: 6rem;
+        font-weight: 600;
+    }
+}
