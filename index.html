@@ -10,7 +10,14 @@
       text-align: center;
       padding: 40px;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
     button {
+      margin-top: 30px;
       padding: 12px 24px;
       font-size: 16px;
       background-color: #2c6ff6;
@@ -23,26 +30,31 @@
 </head>
 <body>
 
-  <h1>Chia sẻ qua điện thoại</h1>
-  <p>Nhấn nút bên dưới để chia sẻ liên kết này qua Zalo hoặc ứng dụng khác.</p>
+  <h1>Chia sẻ ảnh qua Zalo hoặc ứng dụng khác</h1>
+  <p>Ảnh bên dưới sẽ được chia sẻ thông qua menu mặc định của điện thoại:</p>
 
+  <img id="shareImage" src="https://i.imgur.com/6RLwN0p.jpeg" alt="Ảnh demo" />
+
+  <br>
   <button id="btnShare">Chia sẻ ngay</button>
 
   <script>
+    const imageUrl = document.getElementById("shareImage").src;
+
     document.getElementById("btnShare").addEventListener("click", async () => {
       if (navigator.share) {
         try {
           await navigator.share({
             title: "Ảnh vui nè!",
             text: "Xem thử ảnh này nhé!",
-            url: "https://i.imgur.com/6RLwN0p.jpeg"
+            url: imageUrl
           });
           console.log("✅ Đã chia sẻ thành công!");
         } catch (err) {
           console.error("❌ Lỗi khi chia sẻ:", err);
         }
       } else {
-        alert("Trình duyệt không hỗ trợ chức năng chia sẻ!");
+        alert("❌ Trình duyệt không hỗ trợ chức năng chia sẻ!");
       }
     });
   </script>
