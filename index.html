@@ -2,46 +2,50 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Chia sẻ Zalo</title>
+  <title>Chia sẻ bằng navigator.share()</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
-      padding: 50px;
+      padding: 40px;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    .btn-share {
-      margin-top: 20px;
-      padding: 12px 20px;
+    button {
+      padding: 12px 24px;
       font-size: 16px;
-      background-color: #0068ff;
+      background-color: #2c6ff6;
       color: white;
       border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
+      border-radius: 6px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <h1>Chia sẻ ảnh qua Zalo</h1>
+  <h1>Chia sẻ qua điện thoại</h1>
+  <p>Nhấn nút bên dưới để chia sẻ liên kết này qua Zalo hoặc ứng dụng khác.</p>
 
-  <img src="https://i.imgur.com/6RLwN0p.jpeg" alt="Ảnh demo">
+  <button id="btnShare">Chia sẻ ngay</button>
 
-  <br><br>
-
-  <a
-    class="btn-share"
-    href="https://zalo.me/share?url=https://i.imgur.com/6RLwN0p.jpeg"
-    target="_blank"
-  >
-    Chia sẻ qua Zalo
-  </a>
+  <script>
+    document.getElementById("btnShare").addEventListener("click", async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: "Ảnh vui nè!",
+            text: "Xem thử ảnh này nhé!",
+            url: "https://i.imgur.com/6RLwN0p.jpeg"
+          });
+          console.log("✅ Đã chia sẻ thành công!");
+        } catch (err) {
+          console.error("❌ Lỗi khi chia sẻ:", err);
+        }
+      } else {
+        alert("Trình duyệt không hỗ trợ chức năng chia sẻ!");
+      }
+    });
+  </script>
 
 </body>
 </html>
