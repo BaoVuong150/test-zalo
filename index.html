@@ -1,39 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang web tương tác GETLOVE">
+    <meta name="keywords" content="GETLOVE">
+    <meta name="author" content="Bao Vuong">
     <title>GETLOVE</title>
-    <link rel="stylesheet" href="CSS/index.css">
-    <link rel="stylesheet" href="bootstrap5/bootstrap.min.css">
+    <link rel="icon" href="assets/img/favicon.jpg">
+    <link rel="stylesheet" href="assets/CSS/index.css">
+    <link rel="stylesheet" href="assets/bootstrap5/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-fluid vh-100">
+    <header>
+        <h1 class="visually-hidden">GETLOVE - Tạo khoảnh khắc cảm ơn tuyệt vời</h1>
+    </header>
+
+    <main class="container-fluid vh-100">
         <div class="row">
-            <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 mx-auto position-relative">
-                <section class="section">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-auto position-relative">
+                <section class="section" aria-label="Lựa chọn tương tác">
                     <div class="btn-row">
-                        <button class="button yes">Tui đồng ý</button>
-                        <button class="button no">NOPE!!</button>
+                        <button class="button yes">Tôi đồng ý</button>
+                        <button class="button no">Nope!!</button>
                     </div>
                     <div class="btn-center">
-                        <button class="button time other">Cần thêm thời gian</button>
+                        <button class="button time other">để lại lời nhắn</button>
                     </div>
                 </section>
-                <div class="modal-tks">
-                    <img class="img-message" src="img/message.png" alt="">
-                    
+            </div>
+            <div class="container-modal-yes" id="modal-1">
+                <div class="modal-tks" role="dialog" aria-modal="true" aria-label="Hộp thư cảm ơn">
+                    <div style="width: fit-content; height: fit-content;">
+                        <img class="img-message img-fluid" src="assets/img/message.png" alt="Thư cảm ơn bằng hình ảnh">
+                        <button class="close-modal" aria-label="Đóng hộp thư">X</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-modal-yes" id="modal-2">
+                <div class="modal-tks" role="dialog" aria-modal="true" aria-label="Hộp thư cảm ơn">
+                    <div style="width: fit-content; height: fit-content;">
+                        <div class="checked2step">
+                            <span class="content-text">Thoiiiiii mà cho tui 1 cơ hội đi 😭😵 tui iu bà 2 năm rùi đó,
+                                suốt quãng thời gian đó tui thể là trong tim tui chỉ có mỗi Mai Anh mà thui,
+                                giờ mà Mai Anh bấm cái nút màu đỏ là ko chọn lại đc đâu á suy nghĩ thật kỹ lại đi mà huhuuuu
+                                😭😭😭
+                            </span>
+                            <div class="btn-row-modal2">
+                                <button class="button cancel">Huỷ</button>
+                                <button class="button surely">Đã nghĩ kỹ</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <script src="assets/JS/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
-
-<script src="JS/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
 
 </html>
